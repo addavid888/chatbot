@@ -1,2 +1,2 @@
 streamlit
-replicate
+hugchat==0.0.8
