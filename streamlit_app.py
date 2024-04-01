@@ -1,12 +1,11 @@
 import streamlit as st
-import streamlit as st
 from hugchat import hugchat
 from hugchat.login import Login
 
-st.title('🤗💬 HugChat')
+# App title
+st.set_page_config(page_title="🤗💬 HugChat")
 
-st.write('Hello world!')
-
+# Hugging Face Credentials
 with st.sidebar:
     st.title('🤗💬 HugChat')
     if ('EMAIL' in st.secrets) and ('PASS' in st.secrets):
@@ -21,7 +20,7 @@ with st.sidebar:
         else:
             st.success('Proceed to entering your prompt message!', icon='👉')
     st.markdown('📖 Learn how to build this app in this [blog](https://blog.streamlit.io/how-to-build-an-llm-powered-chatbot-with-streamlit/)!')
-
+    
 # Store LLM generated responses
 if "messages" not in st.session_state.keys():
     st.session_state.messages = [{"role": "assistant", "content": "How may I help you?"}]
